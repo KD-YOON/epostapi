@@ -34,7 +34,7 @@ def root():
 def track(tracking_number: str = Query(..., description="운송장/등기번호")):
     url = (
         f"https://biz.epost.go.kr/KpostPortal/openapi?"
-        f"regiNo={tracking_number}&serviceKey={EPOST_KEY}"
+        f"regiNo={tracking_number}&target=regi&serviceKey={EPOST_KEY}"
     )
     try:
         res = requests.get(url, timeout=10)
